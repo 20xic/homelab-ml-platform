@@ -1,0 +1,22 @@
+[project]
+name = "lab-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "twentyxic", email = "twenty.xic@yandex.ru" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.162.1",
+    "pydantic>=2.14.3",
+    "pydantic-settings>=2.16.2",
+    "uvicorn[standard]",
+]
+
+[project.scripts]
+lab-api = "lab_api.main:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"

@@ -1,0 +1,24 @@
+[Unit]
+Description=Lab FastAPI service
+After=network.target
+
+[Service]
+Type=simple
+User=api
+Group=api
+WorkingDirectory=/opt/api
+EnvironmentFile=/etc/api/api.env
+ExecStart=/opt/api/.venv/bin/lab-api
+
+Restart=on-failure
+RestartSec=3s
+
+MemoryMax=200M
+
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
